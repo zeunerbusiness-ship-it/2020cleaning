@@ -289,7 +289,7 @@ function Index() {
             <div className="mt-8 space-y-4">
               {[
                 { icon: Phone, label: "Phone", value: "(800) 555-0199" },
-                { icon: BadgeCheck, label: "Email", value: "hello@sparklehome.com" },
+                { icon: BadgeCheck, label: "Email", value: "hello@2020cleaning.com" },
                 { icon: Home, label: "Service Areas", value: "NYC · Brooklyn · Queens · Jersey City · Hoboken" },
                 { icon: CalendarCheck, label: "Hours", value: "Mon – Sat · 7AM – 8PM" },
               ].map((c) => (

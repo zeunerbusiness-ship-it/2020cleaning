@@ -33,7 +33,7 @@ export function Header() {
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground">
             <Sparkles className="h-5 w-5" />
           </span>
-          <span className="font-display text-lg font-700 text-primary">SparkleHome</span>
+          <span className="font-display text-lg font-700 text-primary">2020 Cleaning</span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
