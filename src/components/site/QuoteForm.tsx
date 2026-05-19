@@ -1,0 +1,58 @@
+import { useState } from "react";
+import { z } from "zod";
+import { toast } from "sonner";
+
+const schema = z.object({
+  name: z.string().trim().min(2, "Enter your name").max(80),
+  phone: z.string().trim().min(7, "Enter a valid phone").max(30),
+  email: z.string().trim().email("Invalid email").max(200),
+  zip: z.string().trim().min(3, "ZIP required").max(12),
+  bedrooms: z.string().min(1),
+  bathrooms: z.string().min(1),
+});
+
+export function QuoteForm() {
+  const [submitting, setSubmitting] = useState(false);
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+    const parsed = schema.safeParse(Object.fromEntries(fd));
+    if (!parsed.success) {
+      toast.error(parsed.error.issues[0]?.message ?? "Please check your inputs");
+      return;
+    }
+    setSubmitting(true);
+    await new Promise((r) => setTimeout(r, 700));
+    setSubmitting(false);
+    toast.success("Thanks! We'll text you a free estimate within minutes.");
+    (e.target as HTMLFormElement).reset();
+  }
+
+  const input = "w-full rounded-xl border border-border bg-background px-4 py-3 text-base outline-none focus:border-accent focus:ring-4 focus:ring-accent/20 transition";
+
+  return (
+    <form onSubmit={onSubmit} className="grid gap-4">
+      <div className="grid gap-4 sm:grid-cols-2">
+        <input className={input} name="name" placeholder="Full name" required />
+        <input className={input} name="phone" type="tel" placeholder="Phone" required />
+      </div>
+      <input className={input} name="email" type="email" placeholder="Email address" required />
+      <div className="grid gap-4 sm:grid-cols-3">
+        <input className={input} name="zip" placeholder="ZIP code" required />
+        <select className={input} name="bedrooms" required defaultValue="">
+          <option value="" disabled>Bedrooms</option>
+          {["Studio","1","2","3","4","5+"].map((b)=> <option key={b} value={b}>{b}</option>)}
+        </select>
+        <select className={input} name="bathrooms" required defaultValue="">
+          <option value="" disabled>Bathrooms</option>
+          {["1","1.5","2","2.5","3","4+"].map((b)=> <option key={b} value={b}>{b}</option>)}
+        </select>
+      </div>
+      <button disabled={submitting} className="btn-cta mt-2 rounded-xl py-4 text-base font-semibold disabled:opacity-70">
+        {submitting ? "Sending…" : "Get My Free Estimate"}
+      </button>
+      <p className="text-xs text-muted-foreground text-center">No obligation · 60-second response · Your info stays private.</p>
+    </form>
+  );
+}
