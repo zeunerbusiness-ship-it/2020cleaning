@@ -7,7 +7,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 md:px-8 py-16 grid gap-12 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2">
-            <img src={logoImg} alt="2020 Cleaning" className="h-14 w-auto rounded-xl shadow-sm" />
+            <img src={logoImg} alt="2020 Cleaning" className="h-[72px] w-auto rounded-xl shadow-sm" />
           </div>
           <p className="mt-4 text-sm text-primary-foreground/70 max-w-xs">
             Trusted house cleaning services for busy families across the United States.
