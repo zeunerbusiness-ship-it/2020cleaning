@@ -9,6 +9,7 @@ const schema = z.object({
   zip: z.string({ required_error: "ZIP code is required" }).trim().min(3, "ZIP required").max(12),
   bedrooms: z.string({ required_error: "Select the number of bedrooms" }).min(1, "Select bedrooms"),
   bathrooms: z.string({ required_error: "Select the number of bathrooms" }).min(1, "Select bathrooms"),
+  cleaning_type: z.string({ required_error: "Select a type of cleaning" }).min(1, "Select a type of cleaning"),
 });
 
 export function QuoteForm() {
@@ -50,13 +51,17 @@ export function QuoteForm() {
         <input className={input} name="zip" placeholder="ZIP code" required />
         <select className={input} name="bedrooms" required defaultValue="">
           <option value="" disabled>Bedrooms</option>
-          {["Studio","1","2","3","4","5+"].map((b)=> <option key={b} value={b}>{b}</option>)}
+          {["Studio","1","2","3","4+"].map((b)=> <option key={b} value={b}>{b}</option>)}
         </select>
         <select className={input} name="bathrooms" required defaultValue="">
           <option value="" disabled>Bathrooms</option>
-          {["1","1.5","2","2.5","3","4+"].map((b)=> <option key={b} value={b}>{b}</option>)}
+          {["1","2","3","4+"].map((b)=> <option key={b} value={b}>{b}</option>)}
         </select>
       </div>
+      <select className={input} name="cleaning_type" required defaultValue="">
+        <option value="" disabled>Type of Cleaning</option>
+        {["Standard Cleaning","Deep Cleaning","Move In / Move Out","Airbnb Cleaning","Office Cleaning"].map((t)=> <option key={t} value={t}>{t}</option>)}
+      </select>
       <button disabled={submitting} className="btn-cta mt-2 rounded-xl py-4 text-base font-semibold disabled:opacity-70">
         {submitting ? "Sending…" : "Get My Free Estimate"}
       </button>
