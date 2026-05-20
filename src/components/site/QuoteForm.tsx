@@ -3,12 +3,12 @@ import { z } from "zod";
 import { toast } from "sonner";
 
 const schema = z.object({
-  name: z.string().trim().min(2, "Enter your name").max(80),
-  phone: z.string().trim().min(7, "Enter a valid phone").max(30),
-  email: z.string().trim().email("Invalid email").max(200),
-  zip: z.string().trim().min(3, "ZIP required").max(12),
-  bedrooms: z.string().min(1),
-  bathrooms: z.string().min(1),
+  name: z.string({ required_error: "Name is required" }).trim().min(2, "Enter your name").max(80),
+  phone: z.string({ required_error: "Phone is required" }).trim().min(7, "Enter a valid phone").max(30),
+  email: z.string({ required_error: "Email is required" }).trim().email("Invalid email").max(200),
+  zip: z.string({ required_error: "ZIP code is required" }).trim().min(3, "ZIP required").max(12),
+  bedrooms: z.string({ required_error: "Select the number of bedrooms" }).min(1, "Select bedrooms"),
+  bathrooms: z.string({ required_error: "Select the number of bathrooms" }).min(1, "Select bathrooms"),
 });
 
 export function QuoteForm() {
@@ -17,9 +17,14 @@ export function QuoteForm() {
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
+    if (fd.get("bot_field")) {
+      // Honeypot caught a bot, fail silently
+      return;
+    }
+
     const parsed = schema.safeParse(Object.fromEntries(fd));
     if (!parsed.success) {
-      toast.error(parsed.error.issues[0]?.message ?? "Please check your inputs");
+      toast.error(parsed.error.issues[0]?.message ?? "Please check your inputs, all fields are required.");
       return;
     }
     setSubmitting(true);
@@ -33,6 +38,9 @@ export function QuoteForm() {
 
   return (
     <form onSubmit={onSubmit} className="grid gap-4">
+      {/* Anti-spam honeypot */}
+      <input type="text" name="bot_field" tabIndex={-1} autoComplete="off" style={{ display: "none" }} aria-hidden="true" />
+      
       <div className="grid gap-4 sm:grid-cols-2">
         <input className={input} name="name" placeholder="Full name" required />
         <input className={input} name="phone" type="tel" placeholder="Phone" required />
