@@ -15,9 +15,13 @@ export function Footer() {
             Trusted house cleaning services for busy families across the United States.
           </p>
           <div className="mt-5 flex gap-3">
-            {[Facebook, Instagram, Twitter].map((I, i) => (
-              <a key={i} href="#" aria-label="social" className="grid h-9 w-9 place-items-center rounded-full bg-white/10 hover:bg-accent hover:text-primary transition-colors">
-                <I className="h-4 w-4" />
+            {[
+              { icon: Facebook, href: "#" },
+              { icon: Instagram, href: "https://www.instagram.com/2020.cleaning/" },
+              { icon: Twitter, href: "#" }
+            ].map((s, i) => (
+              <a key={i} href={s.href} target={s.href !== "#" ? "_blank" : undefined} rel={s.href !== "#" ? "noreferrer" : undefined} aria-label="social" className="grid h-9 w-9 place-items-center rounded-full bg-white/10 hover:bg-accent hover:text-primary transition-colors">
+                <s.icon className="h-4 w-4" />
               </a>
             ))}
           </div>
@@ -44,15 +48,15 @@ export function Footer() {
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wider text-accent">Contact</h4>
           <ul className="mt-4 space-y-2 text-sm text-primary-foreground/80">
-            <li>(800) 555-0199</li>
-            <li>hello@2020cleaning.com</li>
+            <li>(321) 378-6680</li>
+            <li>contact@2020cleaning.com</li>
             <li>Mon–Sat · 7AM – 8PM</li>
           </ul>
         </div>
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-5 md:px-8 py-6 text-xs text-primary-foreground/60 flex flex-col md:flex-row justify-between gap-2">
-          <p>© {new Date().getFullYear()} 2020 Cleaning. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} 2020 Cleaning. Created by <a href="https://agenciaadcompany.com.br/" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">AD Company</a>. All rights reserved.</p>
           <p>Licensed · Bonded · Insured</p>
         </div>
       </div>
