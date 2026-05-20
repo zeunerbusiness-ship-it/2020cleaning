@@ -1,4 +1,5 @@
-import { Facebook, Instagram, Sparkles, Twitter } from "lucide-react";
+import { Facebook, Instagram, Twitter } from "lucide-react";
+import logoImg from "@/assets/logo.jpeg";
 
 export function Footer() {
   return (
@@ -6,10 +7,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 md:px-8 py-16 grid gap-12 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-xl bg-accent text-primary">
-              <Sparkles className="h-5 w-5" />
-            </span>
-            <span className="font-display text-lg font-bold">2020 Cleaning</span>
+            <img src={logoImg} alt="2020 Cleaning" className="h-14 w-auto rounded-xl shadow-sm" />
           </div>
           <p className="mt-4 text-sm text-primary-foreground/70 max-w-xs">
             Trusted house cleaning services for busy families across the United States.
@@ -50,7 +48,7 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-sm text-primary-foreground/80">
             <li>(321) 500-2020</li>
             <li>contact@2020cleaning.com</li>
-            <li>Mon–Sat · 7AM – 8PM</li>
+            <li>Mon–Sat · 8:00 AM – 6:00 PM</li>
           </ul>
         </div>
       </div>

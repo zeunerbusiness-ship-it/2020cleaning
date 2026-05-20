@@ -291,7 +291,7 @@ function Index() {
                 { icon: Phone, label: "Phone", value: "(321) 500-2020" },
                 { icon: BadgeCheck, label: "Email", value: "contact@2020cleaning.com" },
                 { icon: Home, label: "Service Areas", value: "NYC · Brooklyn · Queens · Jersey City · Hoboken" },
-                { icon: CalendarCheck, label: "Hours", value: "Mon – Sat · 7AM – 8PM" },
+                { icon: CalendarCheck, label: "Hours", value: "Mon – Sat · 8:00 AM – 6:00 PM" },
               ].map((c) => (
                 <div key={c.label} className="flex items-start gap-4">
                   <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/15 text-primary">

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, Phone, Sparkles, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
+import logoImg from "@/assets/logo.jpeg";
 
 const nav = [
   { label: "Home", href: "#home" },
@@ -30,10 +31,7 @@ export function Header() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
         <Link to="/" className="flex items-center gap-2">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground">
-            <Sparkles className="h-5 w-5" />
-          </span>
-          <span className="font-display text-lg font-700 text-primary">2020 Cleaning</span>
+          <img src={logoImg} alt="2020 Cleaning" className="h-12 w-auto" />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
