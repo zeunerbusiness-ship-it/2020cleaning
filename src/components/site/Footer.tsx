@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 import logoImg from "@/assets/logo.png";
 
 export function Footer() {
@@ -16,7 +16,6 @@ export function Footer() {
             {[
               { icon: Facebook, href: "#" },
               { icon: Instagram, href: "https://www.instagram.com/2020.cleaning/" },
-              { icon: Twitter, href: "#" }
             ].map((s, i) => (
               <a key={i} href={s.href} target={s.href !== "#" ? "_blank" : undefined} rel={s.href !== "#" ? "noreferrer" : undefined} aria-label="social" className="grid h-9 w-9 place-items-center rounded-full bg-white/10 hover:bg-accent hover:text-primary transition-colors">
                 <s.icon className="h-4 w-4" />
