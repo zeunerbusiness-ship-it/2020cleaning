@@ -4,7 +4,7 @@ import logoImg from "@/assets/logo.png";
 export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="mx-auto max-w-7xl px-5 md:px-8 py-16 grid gap-12 md:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-5 md:px-8 py-16 grid gap-12 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-2">
             <img src={logoImg} alt="2020 Cleaning" className="h-[72px] w-auto rounded-xl shadow-sm" />
@@ -31,16 +31,6 @@ export function Footer() {
             <li><a href="#reviews" className="hover:text-accent">Reviews</a></li>
             <li><a href="#contact" className="hover:text-accent">Get a Quote</a></li>
             <li><a href="#how" className="hover:text-accent">How It Works</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-accent">Service Areas</h4>
-          <ul className="mt-4 space-y-2 text-sm text-primary-foreground/80">
-            <li>New York, NY</li>
-            <li>Brooklyn, NY</li>
-            <li>Queens, NY</li>
-            <li>Jersey City, NJ</li>
-            <li>Hoboken, NJ</li>
           </ul>
         </div>
         <div>
