@@ -48,7 +48,7 @@ export function Footer() {
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wider text-accent">Contact</h4>
           <ul className="mt-4 space-y-2 text-sm text-primary-foreground/80">
-            <li>(321) 378-6680</li>
+            <li>(321) 500-2020</li>
             <li>contact@2020cleaning.com</li>
             <li>Mon–Sat · 7AM – 8PM</li>
           </ul>

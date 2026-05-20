@@ -78,7 +78,7 @@ function Index() {
               <a href="#contact" className="btn-cta inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-base font-semibold">
                 Get Free Quote <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="tel:+13213786680" className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary px-6 py-3.5 text-base font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
+              <a href="tel:+13215002020" className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary px-6 py-3.5 text-base font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
                 <Phone className="h-4 w-4" /> Call Now
               </a>
             </div>
@@ -271,7 +271,7 @@ function Index() {
             <a href="#contact" className="btn-cta inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-base font-semibold">
               Get Free Quote <ArrowRight className="h-4 w-4" />
             </a>
-            <a href="tel:+13213786680" className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 backdrop-blur border border-white/20 px-7 py-4 text-base font-semibold hover:bg-white/20 transition">
+            <a href="tel:+13215002020" className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 backdrop-blur border border-white/20 px-7 py-4 text-base font-semibold hover:bg-white/20 transition">
               <Phone className="h-4 w-4" /> Call Now
             </a>
           </div>
@@ -288,7 +288,7 @@ function Index() {
 
             <div className="mt-8 space-y-4">
               {[
-                { icon: Phone, label: "Phone", value: "(321) 378-6680" },
+                { icon: Phone, label: "Phone", value: "(321) 500-2020" },
                 { icon: BadgeCheck, label: "Email", value: "contact@2020cleaning.com" },
                 { icon: Home, label: "Service Areas", value: "NYC · Brooklyn · Queens · Jersey City · Hoboken" },
                 { icon: CalendarCheck, label: "Hours", value: "Mon – Sat · 7AM – 8PM" },
