@@ -9,12 +9,9 @@ import { StickyCall } from "@/components/site/StickyCall";
 import { QuoteForm } from "@/components/site/QuoteForm";
 import { Toaster } from "@/components/ui/sonner";
 import heroImg from "@/assets/hero-cleaning.jpg";
-import before1 from "@/assets/before-1.jpg";
-import after1 from "@/assets/after-1.jpg";
-import before2 from "@/assets/before-2.jpg";
-import after2 from "@/assets/after-2.jpg";
-import before3 from "@/assets/before-3.jpg";
-import after3 from "@/assets/after-3.jpg";
+import photo1 from "@/assets/foto 1.jpeg";
+import photo2 from "@/assets/foto 2.png";
+import photo3 from "@/assets/foto 3.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -44,9 +41,9 @@ const steps = [
 ];
 
 const gallery = [
-  { b: before1, a: after1, label: "Living Room" },
-  { b: before2, a: after2, label: "Kitchen" },
-  { b: before3, a: after3, label: "Bathroom" },
+  { img: photo1, label: "Living Room" },
+  { img: photo2, label: "Kitchen" },
+  { img: photo3, label: "Bathroom" },
 ];
 
 const reviews = [
@@ -195,26 +192,20 @@ function Index() {
         </div>
       </section>
 
-      {/* BEFORE / AFTER */}
+      {/* REAL RESULTS */}
       <section className="section-pad bg-secondary">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-wider text-accent">Real Results</p>
-            <h2 className="mt-3 text-3xl md:text-5xl font-bold text-primary">Before & after.</h2>
+          <div className="text-center max-w-2xl mx-auto">
+            <p className="text-sm font-semibold uppercase tracking-wider text-accent">Our Work</p>
+            <h2 className="mt-3 text-3xl md:text-5xl font-bold text-primary">Real Results</h2>
             <p className="mt-4 text-lg text-muted-foreground">A glimpse at what our team does every day.</p>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {gallery.map((g) => (
               <div key={g.label} className="group overflow-hidden rounded-2xl bg-background shadow-card">
-                <div className="grid grid-cols-2">
-                  <div className="relative">
-                    <img src={g.b} alt={`${g.label} before`} loading="lazy" width={800} height={600} className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                    <span className="absolute top-3 left-3 rounded-full bg-primary/90 text-primary-foreground text-xs font-semibold px-2.5 py-1">Before</span>
-                  </div>
-                  <div className="relative">
-                    <img src={g.a} alt={`${g.label} after`} loading="lazy" width={800} height={600} className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                    <span className="absolute top-3 left-3 rounded-full bg-accent text-primary text-xs font-semibold px-2.5 py-1">After</span>
-                  </div>
+                <div className="relative overflow-hidden">
+                  <img src={g.img} alt={`${g.label} cleaning result`} loading="lazy" width={800} height={600} className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <span className="absolute top-3 left-3 rounded-full bg-accent text-primary text-xs font-semibold px-2.5 py-1">Real Results</span>
                 </div>
                 <div className="p-5">
                   <p className="font-semibold text-primary">{g.label}</p>
