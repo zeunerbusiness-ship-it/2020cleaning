@@ -8,10 +8,10 @@ import { Footer } from "@/components/site/Footer";
 import { StickyCall } from "@/components/site/StickyCall";
 import { QuoteForm } from "@/components/site/QuoteForm";
 import { Toaster } from "@/components/ui/sonner";
-import heroImg from "@/assets/hero-cleaning.jpg";
-import photo1 from "@/assets/foto 1.jpeg";
-import photo2 from "@/assets/foto 2.png";
-import photo3 from "@/assets/foto 3.png";
+import heroImg from "@/assets/hero-cleaning.webp";
+import photo1 from "@/assets/foto 1.webp";
+import photo2 from "@/assets/foto 2.webp";
+import photo3 from "@/assets/foto 3.webp";
 
 export const Route = createFileRoute("/")({
   component: Index,
