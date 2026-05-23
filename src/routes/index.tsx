@@ -166,6 +166,70 @@ function Index() {
         </div>
       </section>
 
+      {/* GOOGLE REVIEWS BANNER */}
+      <section className="section-pad bg-secondary">
+        <div className="mx-auto max-w-5xl px-5 md:px-8">
+          <div className="rounded-3xl border border-border bg-background shadow-soft overflow-hidden">
+            <div className="flex flex-col md:flex-row items-center gap-8 p-8 md:p-12">
+
+              {/* Left: Google branding + rating */}
+              <div className="flex flex-col items-center md:items-start gap-4 shrink-0">
+                {/* Google logo badge */}
+                <div className="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="h-9 w-9" aria-label="Google">
+                    <path fill="#EA4335" d="M24 9.5c3.1 0 5.8 1.1 8 2.9l6-6C34.3 3.2 29.4 1 24 1 14.8 1 7 6.7 3.7 14.7l7 5.4C12.4 13.7 17.7 9.5 24 9.5z"/>
+                    <path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.7c-.6 3-2.3 5.5-4.8 7.2l7.4 5.7c4.3-4 6.8-9.9 7.2-16.9z"/>
+                    <path fill="#FBBC05" d="M10.7 28.1A14.6 14.6 0 0 1 9.5 24c0-1.4.2-2.8.5-4.1l-7-5.4A23.9 23.9 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8l7.6-5.8-.5-.9z"/>
+                    <path fill="#34A853" d="M24 47c5.4 0 9.9-1.8 13.2-4.8l-7.4-5.7c-1.8 1.2-4.1 2-5.8 2-6.3 0-11.6-4.3-13.5-10l-7.6 5.8C7 41.3 14.8 47 24 47z"/>
+                  </svg>
+                  <span className="text-xl font-bold text-primary tracking-tight">Google</span>
+                </div>
+
+                {/* Stars + score */}
+                <div className="text-center md:text-left">
+                  <p className="text-5xl font-extrabold text-primary leading-none">4.9</p>
+                  <div className="mt-2 flex justify-center md:justify-start">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-[#FBBC05] text-[#FBBC05]" />
+                    ))}
+                  </div>
+                  <p className="mt-1.5 text-sm text-muted-foreground">Based on Google Reviews</p>
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div className="hidden md:block w-px self-stretch bg-border" aria-hidden />
+
+              {/* Right: text + CTA */}
+              <div className="flex-1 text-center md:text-left">
+                <p className="text-sm font-semibold uppercase tracking-wider text-accent">What Our Clients Are Saying</p>
+                <h2 className="mt-3 text-2xl md:text-3xl font-bold text-primary leading-snug">
+                  Hundreds of 5-star reviews on Google My Business
+                </h2>
+                <p className="mt-3 text-muted-foreground text-base leading-relaxed">
+                  Real customers, real experiences. See what our community has to say about Pristine Home Solutions — straight from Google.
+                </p>
+                <a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold hover:bg-primary/90 transition-colors shadow-soft"
+                  aria-label="Read our Google reviews"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="h-4 w-4" aria-hidden>
+                    <path fill="#fff" d="M24 9.5c3.1 0 5.8 1.1 8 2.9l6-6C34.3 3.2 29.4 1 24 1 14.8 1 7 6.7 3.7 14.7l7 5.4C12.4 13.7 17.7 9.5 24 9.5z"/>
+                    <path fill="#fff" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.7c-.6 3-2.3 5.5-4.8 7.2l7.4 5.7c4.3-4 6.8-9.9 7.2-16.9z"/>
+                    <path fill="#fff" d="M10.7 28.1A14.6 14.6 0 0 1 9.5 24c0-1.4.2-2.8.5-4.1l-7-5.4A23.9 23.9 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8l7.6-5.8-.5-.9z"/>
+                    <path fill="#fff" d="M24 47c5.4 0 9.9-1.8 13.2-4.8l-7.4-5.7c-1.8 1.2-4.1 2-5.8 2-6.3 0-11.6-4.3-13.5-10l-7.6 5.8C7 41.3 14.8 47 24 47z"/>
+                  </svg>
+                  Read Our Google Reviews
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* HOW IT WORKS */}
       <section id="how" className="section-pad">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
