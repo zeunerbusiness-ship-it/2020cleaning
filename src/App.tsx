@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight, BadgeCheck, CalendarCheck, CheckCircle2, ClipboardList,
   Home, Leaf, Phone, ShieldCheck, Sparkles, Star, Truck, Users, Wrench,
@@ -12,10 +11,6 @@ import heroImg from "@/assets/hero-cleaning.webp";
 import photo1 from "@/assets/foto 1.webp";
 import photo2 from "@/assets/foto 2.webp";
 import photo3 from "@/assets/foto 3.webp";
-
-export const Route = createFileRoute("/")({
-  component: Index,
-});
 
 const services = [
   { icon: Home, title: "Standard Cleaning", desc: "Regular tidy-ups that keep your home consistently fresh and inviting." },
@@ -52,7 +47,7 @@ const reviews = [
   { name: "Emily K.", loc: "Manhattan, NY", text: "Reliable, professional, and the eco products are a huge plus with two kids and a dog. Highly recommend." },
 ];
 
-function Index() {
+export default function App() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
@@ -294,8 +289,6 @@ function Index() {
                 </div>
               ))}
             </div>
-
-
           </div>
 
           <div className="rounded-3xl border border-border bg-card p-7 md:p-9 shadow-soft">
