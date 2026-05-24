@@ -41,7 +41,7 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10">
+      <div className="border-t border-white/10 pb-24 md:pb-0">
         <div className="mx-auto max-w-7xl px-5 md:px-8 py-6 text-xs text-primary-foreground/60 flex flex-col md:flex-row justify-between gap-2">
           <p>© {new Date().getFullYear()} 2020 Cleaning. Created by <a href="https://agenciaadcompany.com.br/" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">AD Company</a>. All rights reserved.</p>
           <p>Licensed · Bonded · Insured</p>

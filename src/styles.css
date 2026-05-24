@@ -101,5 +101,5 @@
   padding-block: 6rem;
 }
 @media (max-width: 768px) {
-  .section-pad { padding-block: 4rem; }
+  .section-pad { padding-block: 3rem; }
 }

@@ -60,7 +60,7 @@ function Index() {
 
       {/* HERO */}
       <section id="home" className="relative pt-28 md:pt-36" style={{ background: "var(--gradient-hero)" }}>
-        <div className="mx-auto max-w-7xl px-5 md:px-8 grid gap-12 md:grid-cols-2 items-center pb-20 md:pb-28">
+        <div className="mx-auto max-w-7xl px-5 md:px-8 grid gap-10 md:gap-12 md:grid-cols-2 items-center pb-20 md:pb-28">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 backdrop-blur px-3 py-1.5 text-xs font-medium text-primary">
               <Sparkles className="h-3.5 w-3.5 text-accent" /> Trusted by 5,000+ happy homes
@@ -96,7 +96,7 @@ function Index() {
               alt="Professional cleaner in a bright modern home"
               width={1280}
               height={1280}
-              className="relative rounded-3xl shadow-soft object-cover w-full aspect-square"
+              className="relative rounded-3xl shadow-soft object-cover w-full aspect-[4/3] md:aspect-square"
             />
             <div className="hidden md:flex glass-card absolute -left-6 bottom-6 items-center gap-3 rounded-2xl p-4">
               <div className="grid h-10 w-10 place-items-center rounded-xl bg-accent text-primary"><CheckCircle2 className="h-5 w-5" /></div>
@@ -170,7 +170,7 @@ function Index() {
       <section className="section-pad bg-secondary">
         <div className="mx-auto max-w-5xl px-5 md:px-8">
           <div className="rounded-3xl border border-border bg-background shadow-soft overflow-hidden">
-            <div className="flex flex-col md:flex-row items-center gap-8 p-8 md:p-12">
+            <div className="flex flex-col md:flex-row items-center gap-8 p-6 md:p-12">
 
               {/* Left: Google branding + rating */}
               <div className="flex flex-col items-center md:items-start gap-4 shrink-0">
@@ -335,7 +335,7 @@ function Index() {
 
       {/* CONTACT */}
       <section id="contact" className="section-pad">
-        <div className="mx-auto max-w-7xl px-5 md:px-8 grid gap-12 lg:grid-cols-2 items-start">
+        <div className="mx-auto max-w-7xl px-5 md:px-8 grid gap-10 lg:gap-12 lg:grid-cols-2 items-start">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wider text-accent">Get In Touch</p>
             <h2 className="mt-3 text-3xl md:text-5xl font-bold text-primary">Free estimate in 60 seconds.</h2>
