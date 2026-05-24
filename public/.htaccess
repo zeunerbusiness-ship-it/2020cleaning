@@ -2,14 +2,27 @@
 Options -MultiViews
 RewriteEngine On
 
-# Force correct MIME types (some Hostinger setups serve JS as text/plain)
+# Force correct MIME types (Hostinger sometimes serves JS as text/plain)
 <IfModule mod_mime.c>
-  AddType application/javascript .js .mjs
+  AddType application/javascript .js
+  AddType application/javascript .mjs
   AddType text/css .css
   AddType image/webp .webp
   AddType image/svg+xml .svg
   AddType application/json .json
+  AddType application/wasm .wasm
 </IfModule>
+
+# Hard-force JS modules MIME (overrides server defaults)
+<FilesMatch "\.(js|mjs)$">
+  ForceType application/javascript
+  Header set Content-Type "application/javascript"
+</FilesMatch>
+
+<FilesMatch "\.css$">
+  ForceType text/css
+  Header set Content-Type "text/css"
+</FilesMatch>
 
 # Do not rewrite existing files or directories
 RewriteCond %{REQUEST_FILENAME} -f [OR]
@@ -19,11 +32,11 @@ RewriteRule ^ - [L]
 # SPA fallback: send everything else to index.html
 RewriteRule ^ index.html [L]
 
-# Basic caching for static assets
+# Basic caching
 <IfModule mod_expires.c>
   ExpiresActive On
-  ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
   ExpiresByType image/webp "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
