@@ -36,9 +36,9 @@ const steps = [
 ];
 
 const gallery = [
-  { img: photo1, label: "Living Room" },
-  { img: photo2, label: "Kitchen" },
   { img: photo3, label: "Bathroom" },
+  { img: photo1, label: "Room" },
+  { img: photo2, label: "Kitchen" },
 ];
 
 const reviews = [
@@ -263,7 +263,7 @@ export default function App() {
             {gallery.map((g) => (
               <div key={g.label} className="group overflow-hidden rounded-2xl bg-background shadow-card">
                 <div className="relative overflow-hidden">
-                  <img src={g.img} alt={`${g.label} cleaning result`} loading="lazy" width={800} height={600} className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <img src={g.img} alt={`${g.label} cleaning result`} loading="lazy" width={800} height={600} className="h-auto md:h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   <span className="absolute top-3 left-3 rounded-full bg-accent text-primary text-xs font-semibold px-2.5 py-1">Real Results</span>
                 </div>
                 <div className="p-5">
