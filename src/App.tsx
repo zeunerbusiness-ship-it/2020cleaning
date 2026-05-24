@@ -36,9 +36,9 @@ const steps = [
 ];
 
 const gallery = [
-  { img: photo3, label: "Bathroom" },
-  { img: photo1, label: "Room" },
-  { img: photo2, label: "Kitchen" },
+  { img: photo3, label: "Kitchen" },
+  { img: photo1, label: "Bathroom" },
+  { img: photo2, label: "Room" },
 ];
 
 const reviews = [
