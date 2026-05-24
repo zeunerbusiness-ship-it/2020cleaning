@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "@tanstack/react-router";
 import { Menu, Phone, X } from "lucide-react";
 import logoImg from "@/assets/logo.webp";
 
@@ -30,9 +29,9 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-        <Link to="/" className="flex items-center gap-2">
+        <a href="#home" className="flex items-center gap-2">
           <img src={logoImg} alt="2020 Cleaning" className="h-16 w-auto" />
-        </Link>
+        </a>
 
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((n) => (
