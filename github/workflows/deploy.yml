@@ -1,0 +1,37 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - run: bun install
+
+      - run: bun run build
+
+      - name: Move build to public_html
+        run: |
+          rm -rf public_html
+          mkdir public_html
+          cp -r dist/. public_html/
+          cp netlify.toml public_html/.htaccess 2>/dev/null || true
+
+      - name: Push
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git add -A
+          git commit -m "chore: build" || echo "nada"
+          git push
