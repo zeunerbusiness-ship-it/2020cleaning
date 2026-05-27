@@ -1,6 +1,6 @@
 import {
   ArrowRight, BadgeCheck, CalendarCheck, CheckCircle2, ClipboardList,
-  Home, Leaf, Phone, ShieldCheck, Sparkles, Star, Truck, Users, Wrench,
+  Home, Leaf, Phone, MessageSquare, ShieldCheck, Sparkles, Star, Truck, Users, Wrench,
 } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
@@ -70,8 +70,8 @@ export default function App() {
               <a href="#contact" className="btn-cta inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-base font-semibold">
                 Get Free Quote <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="tel:+13215002020" className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary px-6 py-3.5 text-base font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
-                <Phone className="h-4 w-4" /> Call Now
+              <a href="sms:+13215002020" className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary px-6 py-3.5 text-base font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
+                <MessageSquare className="h-4 w-4" /> Text Us
               </a>
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
@@ -113,31 +113,7 @@ export default function App() {
 
       {/* CONTACT */}
       <section id="contact" className="section-pad">
-        <div className="mx-auto max-w-7xl px-5 md:px-8 grid gap-10 lg:gap-12 lg:grid-cols-2 items-start">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-accent">Get In Touch</p>
-            <h2 className="mt-3 text-3xl md:text-5xl font-bold text-primary">Free estimate in 60 seconds.</h2>
-            <p className="mt-4 text-lg text-muted-foreground">Tell us about your home and we'll text back a transparent quote — no calls required.</p>
-
-            <div className="mt-8 space-y-4">
-              {[
-                { icon: Phone, label: "Phone", value: "(321) 500-2020" },
-                { icon: BadgeCheck, label: "Email", value: "contact@2020cleaning.com" },
-                { icon: CalendarCheck, label: "Hours", value: "Mon – Sat · 8:00 AM – 6:00 PM" },
-              ].map((c) => (
-                <div key={c.label} className="flex items-start gap-4">
-                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/15 text-primary">
-                    <c.icon className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{c.label}</p>
-                    <p className="text-base font-medium text-primary">{c.value}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
+        <div className="mx-auto max-w-2xl px-5 md:px-8">
           <div className="rounded-3xl border border-border bg-card p-7 md:p-9 shadow-soft">
             <h3 className="text-2xl font-bold text-primary">Get a Free Quote</h3>
             <p className="mt-1 text-sm text-muted-foreground">Takes less than a minute.</p>
@@ -358,9 +334,39 @@ export default function App() {
             <a href="#contact" className="btn-cta inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-base font-semibold">
               Get Free Quote <ArrowRight className="h-4 w-4" />
             </a>
-            <a href="tel:+13215002020" className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 backdrop-blur border border-white/20 px-7 py-4 text-base font-semibold hover:bg-white/20 transition">
-              <Phone className="h-4 w-4" /> Call Now
+            <a href="sms:+13215002020" className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 backdrop-blur border border-white/20 px-7 py-4 text-base font-semibold hover:bg-white/20 transition">
+              <MessageSquare className="h-4 w-4" /> Text Us
             </a>
+          </div>
+
+          <div className="mt-14 pt-10 border-t border-white/20 flex flex-col md:flex-row justify-center items-start md:items-center gap-8 md:gap-12 text-left max-w-4xl mx-auto">
+            <div className="flex items-center gap-4">
+              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/15">
+                <MessageSquare className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-wider text-primary-foreground/70">Text / Call</p>
+                <p className="text-base font-medium">(321) 500-2020</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/15">
+                <BadgeCheck className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-wider text-primary-foreground/70">Email</p>
+                <p className="text-base font-medium">contact@2020cleaning.com</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/15">
+                <CalendarCheck className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-wider text-primary-foreground/70">Hours</p>
+                <p className="text-base font-medium">Mon – Sat · 8AM – 6PM</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
