@@ -42,9 +42,9 @@ const gallery = [
 ];
 
 const reviews = [
-  { name: "Sarah M.", loc: "Brooklyn, NY", text: "Absolutely thrilled. The team was punctual, friendly, and my apartment has never looked better. Booking took 60 seconds." },
-  { name: "Daniel R.", loc: "Jersey City, NJ", text: "Best cleaning service we've used. They handle our Airbnb turnovers flawlessly — guests always mention how spotless it is." },
-  { name: "Emily K.", loc: "Manhattan, NY", text: "Reliable, professional, and the eco products are a huge plus with two kids and a dog. Highly recommend." },
+  { name: "Sarah M.", loc: "Orlando, FL", text: "Absolutely thrilled with 2020 Cleaning. The team was punctual, friendly, and my house has never looked better. Booking took 60 seconds." },
+  { name: "Daniel R.", loc: "Kissimmee, FL", text: "Best cleaning service we've used. 2020 Cleaning handles our Airbnb turnovers flawlessly — guests always mention how spotless it is." },
+  { name: "Emily K.", loc: "Winter Park, FL", text: "Reliable and professional! The eco products used by 2020 Cleaning are a huge plus with two kids and a dog. Highly recommend." },
 ];
 
 export default function App() {
