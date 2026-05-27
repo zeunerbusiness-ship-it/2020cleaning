@@ -111,6 +111,43 @@ export default function App() {
         </div>
       </section>
 
+      {/* CONTACT */}
+      <section id="contact" className="section-pad">
+        <div className="mx-auto max-w-7xl px-5 md:px-8 grid gap-10 lg:gap-12 lg:grid-cols-2 items-start">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wider text-accent">Get In Touch</p>
+            <h2 className="mt-3 text-3xl md:text-5xl font-bold text-primary">Free estimate in 60 seconds.</h2>
+            <p className="mt-4 text-lg text-muted-foreground">Tell us about your home and we'll text back a transparent quote — no calls required.</p>
+
+            <div className="mt-8 space-y-4">
+              {[
+                { icon: Phone, label: "Phone", value: "(321) 500-2020" },
+                { icon: BadgeCheck, label: "Email", value: "contact@2020cleaning.com" },
+                { icon: CalendarCheck, label: "Hours", value: "Mon – Sat · 8:00 AM – 6:00 PM" },
+              ].map((c) => (
+                <div key={c.label} className="flex items-start gap-4">
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/15 text-primary">
+                    <c.icon className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{c.label}</p>
+                    <p className="text-base font-medium text-primary">{c.value}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-border bg-card p-7 md:p-9 shadow-soft">
+            <h3 className="text-2xl font-bold text-primary">Get a Free Quote</h3>
+            <p className="mt-1 text-sm text-muted-foreground">Takes less than a minute.</p>
+            <div className="mt-6">
+              <QuoteForm />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SERVICES */}
       <section id="services" className="section-pad">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
@@ -328,42 +365,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section id="contact" className="section-pad">
-        <div className="mx-auto max-w-7xl px-5 md:px-8 grid gap-10 lg:gap-12 lg:grid-cols-2 items-start">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-accent">Get In Touch</p>
-            <h2 className="mt-3 text-3xl md:text-5xl font-bold text-primary">Free estimate in 60 seconds.</h2>
-            <p className="mt-4 text-lg text-muted-foreground">Tell us about your home and we'll text back a transparent quote — no calls required.</p>
-
-            <div className="mt-8 space-y-4">
-              {[
-                { icon: Phone, label: "Phone", value: "(321) 500-2020" },
-                { icon: BadgeCheck, label: "Email", value: "contact@2020cleaning.com" },
-                { icon: CalendarCheck, label: "Hours", value: "Mon – Sat · 8:00 AM – 6:00 PM" },
-              ].map((c) => (
-                <div key={c.label} className="flex items-start gap-4">
-                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/15 text-primary">
-                    <c.icon className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{c.label}</p>
-                    <p className="text-base font-medium text-primary">{c.value}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-border bg-card p-7 md:p-9 shadow-soft">
-            <h3 className="text-2xl font-bold text-primary">Get a Free Quote</h3>
-            <p className="mt-1 text-sm text-muted-foreground">Takes less than a minute.</p>
-            <div className="mt-6">
-              <QuoteForm />
-            </div>
-          </div>
-        </div>
-      </section>
 
       <Footer />
       <StickyCall />

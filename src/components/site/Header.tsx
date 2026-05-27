@@ -30,7 +30,7 @@ export function Header() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
         <a href="#home" className="flex items-center gap-2">
-          <img src={logoImg} alt="2020 Cleaning" className="h-16 w-auto" />
+          <img src={logoImg} alt="2020 Cleaning" className="h-[83px] w-auto" />
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
