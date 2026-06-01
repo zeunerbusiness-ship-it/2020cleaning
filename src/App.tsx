@@ -215,7 +215,7 @@ export default function App() {
                   Hundreds of 5-star reviews on Google My Business
                 </h2>
                 <p className="mt-3 text-muted-foreground text-base leading-relaxed">
-                  Real customers, real experiences. See what our community has to say about Pristine Home Solutions — straight from Google.
+                  Real customers, real experiences. See what our community has to say about 2020 Cleaning — straight from Google.
                 </p>
                 <a
                   href=""
