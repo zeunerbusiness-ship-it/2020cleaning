@@ -2,6 +2,8 @@ import { useState } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
 
+const WEB3FORMS_KEY = "a4120408-ca1b-43f4-ad23-3fed3b891852";
+
 const schema = z.object({
   name: z.string({ required_error: "Name is required" }).trim().min(2, "Enter your name").max(80),
   phone: z.string({ required_error: "Phone is required" }).trim().min(7, "Enter a valid phone").max(30),
@@ -18,6 +20,7 @@ export function QuoteForm() {
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
+
     if (fd.get("bot_field")) {
       // Honeypot caught a bot, fail silently
       return;
@@ -28,11 +31,41 @@ export function QuoteForm() {
       toast.error(parsed.error.issues[0]?.message ?? "Please check your inputs, all fields are required.");
       return;
     }
+
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 700));
-    setSubmitting(false);
-    toast.success("Thanks! We'll text you a free estimate within minutes.");
-    (e.target as HTMLFormElement).reset();
+
+    try {
+      // Build the payload for Web3Forms
+      const payload = new FormData();
+      payload.append("access_key", WEB3FORMS_KEY);
+      payload.append("subject", `New Quote Request - ${parsed.data.cleaning_type} (${parsed.data.bedrooms} bed / ${parsed.data.bathrooms} bath)`);
+      payload.append("from_name", "2020 Cleaning Website");
+      payload.append("name", parsed.data.name);
+      payload.append("phone", parsed.data.phone);
+      payload.append("email", parsed.data.email);
+      payload.append("zip", parsed.data.zip);
+      payload.append("bedrooms", parsed.data.bedrooms);
+      payload.append("bathrooms", parsed.data.bathrooms);
+      payload.append("cleaning_type", parsed.data.cleaning_type);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: payload,
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success("Thanks! We'll text you a free estimate within minutes.");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        toast.error("Something went wrong. Please try again or call us directly.");
+      }
+    } catch {
+      toast.error("Connection error. Please try again or call us directly.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   const input = "w-full rounded-xl border border-border bg-background px-4 py-3 text-base outline-none focus:border-accent focus:ring-4 focus:ring-accent/20 transition";
@@ -41,7 +74,7 @@ export function QuoteForm() {
     <form onSubmit={onSubmit} className="grid gap-4">
       {/* Anti-spam honeypot */}
       <input type="text" name="bot_field" tabIndex={-1} autoComplete="off" style={{ display: "none" }} aria-hidden="true" />
-      
+
       <div className="grid gap-4 sm:grid-cols-2">
         <input className={input} name="name" placeholder="Full name" required />
         <input className={input} name="phone" type="tel" placeholder="Phone" required />
